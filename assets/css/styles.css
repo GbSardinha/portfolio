@@ -229,13 +229,17 @@ figure:hover .text-container {
     top: 85vh;
     font-size: var(--fontMedia);
     color: #2f4858;
-    border: 2px solid #2f4858;
+
     border-radius: 5px;
     cursor: pointer;
     display: none;
     transition: 0.5s ease;
 }
 
+.push_up svg {
+    height: 3vw;
+    width: 3vw;
+}
 /*----------Media Queries----------*/
 
 @media only screen and (max-width: 768px) {
