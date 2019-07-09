@@ -1,0 +1,296 @@
+/*----------Resets----------*/
+
+html {
+    height: 100%;
+}
+
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/*----------Variáveis----------*/
+
+:root {
+    --fontGrande: 50px;
+    --fontMedia: 25px;
+    --fontPequena: 15px;
+    --paddingMtGrande: 70px;
+    --paddingGrande: 50px;
+    --paddingMedio: 30px;
+    --paddingPequeno: 10px;
+    --marginDesktop: 60px;
+    --marginMobile: 20px;
+}
+
+/*----------Geral----------*/
+
+body {
+    font-size: var(--fontPequena);
+    line-height: 1.5;
+    font-family: 'lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+h4 {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/*----------Home----------*/
+
+.home {
+    height: 100vh;
+    background-image: url('../images/sardinha_golf.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.logo {
+    color: white;
+    padding-top: var(--paddingGrande);
+    font-family: 'Merienda', cursive;
+    font-size: var(--fontGrande);
+}
+
+.slogan {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: var(--fontGrande);
+    color: white;
+    padding: var(--paddingMtGrande);
+}
+
+.home li {
+    padding: var(--paddingMedio);
+}
+
+.home svg {
+    color: white;
+    height: var(--fontGrande);
+}
+/*----------About----------*/
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: #2f4858;
+    color: white;
+    padding: var(--marginDesktop);
+    grid-column-gap: var(--paddingMedio);
+}
+
+.about h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-bottom: var(--paddingGrande);
+}
+
+.about h2 {
+    width: 85%;
+}
+
+.content {
+    font-weight: 300;
+    line-height: 2.5;
+
+    text-align: justify;
+}
+
+/*----------Portfolio----------*/
+
+.banner {
+    grid-column: 1/4;
+    padding: var(--paddingGrande);
+}
+
+.portfolioGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 var(--marginDesktop);
+    grid-column-gap: var(--paddingMedio);
+    text-align: center;
+}
+
+.blogPost {
+    padding: var(--paddingGrande);
+}
+
+.blogPost h2,
+.blogPost h4 {
+    padding-bottom: var(--paddingMedio);
+}
+
+figure img {
+    margin: 0 auto;
+    width: auto;
+    height: 14.3vw;
+}
+
+figure {
+    position: relative;
+    height: 14.3vw;
+}
+.text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.text {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--fontMedia);
+    font-weight: 300;
+    color: #fff;
+}
+
+figure:hover .text-container {
+    opacity: 1;
+}
+/*----------Footer----------*/
+
+.footerGrid {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact {
+    padding: var(--marginDesktop);
+    background: #2f4858;
+}
+
+.contact h4,
+.contact h2,
+.contact div {
+    padding-bottom: var(--paddingMedio);
+}
+
+.contact a {
+    font-weight: 300;
+}
+
+.googleMaps {
+    filter: grayscale(100%);
+}
+
+/* Push Up Button */
+
+.push_up {
+    padding: 5px 12.5px;
+    position: fixed;
+    right: 5vw;
+    top: 85vh;
+    font-size: var(--fontMedia);
+    color: #2f4858;
+    border: 2px solid #2f4858;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    transition: 0.5s ease;
+}
+
+/*----------Media Queries----------*/
+
+@media only screen and (max-width: 768px) {
+    /*home*/
+
+    .slogan {
+        font-size: var(--fontMedia);
+        padding: var(--paddingGrande);
+    }
+
+    /*about*/
+
+    .aboutGrid {
+        display: flex;
+        flex-flow: column;
+        padding: var(--marginMobile);
+    }
+
+    .about h3 {
+        padding-bottom: var(--paddingMedio);
+    }
+
+    .about h2 {
+        width: 100%;
+        padding-bottom: var(--paddingMedio);
+    }
+
+    /*travel*/
+
+    .travelGrid {
+        display: flex;
+        flex-flow: column;
+        padding: var(--marginMobile);
+    }
+
+    .blogPost {
+        padding: var(--paddingMedio) 0px;
+    }
+
+    .blogPost h2,
+    .blogPost h4 {
+        padding-bottom: var(--paddingPequeno);
+    }
+
+    .blogPost p {
+        font-weight: 300;
+    }
+
+    /*footer*/
+    .contact {
+        padding: var(--marginMobile);
+    }
+
+    .footerGrid {
+        display: flex;
+        flex-flow: column;
+    }
+}
